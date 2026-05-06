@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Easy Screenshot by PixelFox.cc",
+  "description": "Upload screenshots and image files directly to PixelFox.",
+  "version": "0.1.0",
+  "minimum_chrome_version": "110",
+  "action": {
+    "default_title": "Easy Screenshot by PixelFox.cc",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://pixelfox.cc/*"
+  ],
+  "optional_host_permissions": [
+    "http://localhost:8080/*",
+    "http://127.0.0.1:8080/*"
+  ]
+}

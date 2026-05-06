@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PixelFox Upload</title>
+    <link rel="stylesheet" href="ui.css">
+  </head>
+  <body class="popup-shell result-shell">
+    <header class="app-header">
+      <img src="icons/icon32.png" alt="" width="32" height="32">
+      <div>
+        <h1>PixelFox Upload</h1>
+        <p id="phaseText">Preparing upload.</p>
+      </div>
+    </header>
+
+    <main class="stack">
+      <section class="panel preview-panel" aria-labelledby="previewHeading">
+        <div class="section-header">
+          <h2 id="previewHeading">Preview</h2>
+        </div>
+        <div class="preview-frame">
+          <img id="previewImage" alt="Screenshot preview" hidden>
+          <p id="previewEmpty" class="empty-text">No screenshot ready.</p>
+        </div>
+      </section>
+
+      <section class="status-card" aria-live="polite">
+        <div id="statusText">Waiting for status.</div>
+        <a id="shareLink" class="share-link" href="#" target="_blank" rel="noreferrer" hidden></a>
+      </section>
+
+      <div id="resultActions" class="button-row">
+        <button id="uploadButton" class="primary-button" type="button" disabled>Upload & Copy Link</button>
+        <button id="openButton" class="secondary-button" type="button" disabled>Open Link</button>
+      </div>
+    </main>
+
+    <script type="module" src="result.js"></script>
+  </body>
+</html>
