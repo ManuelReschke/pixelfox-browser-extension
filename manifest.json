@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Easy Screenshot by PixelFox.cc",
   "description": "Upload screenshots and image files directly to PixelFox.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "minimum_chrome_version": "110",
   "action": {
     "default_title": "Easy Screenshot by PixelFox.cc",

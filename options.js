@@ -18,6 +18,7 @@ const savedKeyState = document.getElementById("savedKeyState");
 const deleteKeyButton = document.getElementById("deleteKeyButton");
 const validateButton = document.getElementById("validateButton");
 const statusText = document.getElementById("statusText");
+const versionText = document.getElementById("versionText");
 
 let settings = null;
 
@@ -26,10 +27,15 @@ init();
 async function init() {
   settings = await loadSettings();
   render();
+  renderVersion();
 
   form.addEventListener("submit", saveForm);
   validateButton.addEventListener("click", validateCurrentSettings);
   deleteKeyButton.addEventListener("click", deleteApiKey);
+}
+
+function renderVersion() {
+  versionText.textContent = `Version ${chrome.runtime.getManifest().version}`;
 }
 
 function render() {

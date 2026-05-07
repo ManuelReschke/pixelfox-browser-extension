@@ -33,6 +33,25 @@ export async function getPendingUpload(id) {
   });
 }
 
+export async function updatePendingUploadBlob(id, blob) {
+  const current = await getPendingUpload(id);
+
+  if (!current) {
+    throw new Error("Pending upload not found.");
+  }
+
+  const updated = {
+    ...current,
+    blob,
+    mimeType: blob.type || "image/png",
+    size: blob.size || 0,
+    editedAt: Date.now()
+  };
+
+  await writeRecord(updated);
+  return updated;
+}
+
 export async function deletePendingUpload(id) {
   if (!id) {
     return;

@@ -24,6 +24,7 @@ API requests run from extension contexts: popup, options page, or service worker
 - Optional album ID for upload sessions.
 - Capture the visible viewport directly or select a rectangle with an overlay, and crop correctly on HiDPI displays.
 - Show a screenshot preview before upload.
+- Add red arrows, circles, and text annotations before upload.
 - Create an upload session after confirmation, upload the file through multipart form data, poll status, and show/copy the share link.
 - Direct file upload from the popup.
 - Show the three most recent uploads in the popup with icon-only copy buttons.

@@ -31,6 +31,8 @@ documentation, and server-side changes.
   - Crop the selected area from the screenshot, or keep the full visible viewport.
   - Show the prepared image in a result window as a preview.
 - From the result window:
+  - `Edit` opens a lightweight annotation editor for red arrows, circles, and
+    text before upload.
   - `Upload & Copy Link` starts the upload and copies the resulting share link.
   - `Open Link` opens the link after upload.
 - After a successful upload:
@@ -125,6 +127,7 @@ webapp endpoints.
 - On a normal web page, a rectangle can be selected.
 - The selected area is cropped correctly, including on HiDPI/Retina displays.
 - The result window shows a preview before upload.
+- The preview can be annotated with red arrows, circles, and text before upload.
 - Upload uses `POST /api/v1/upload/sessions` and then `upload_url` after confirmation.
 - After a successful upload, a valid PixelFox share link appears.
 - The share link can be copied and opened.

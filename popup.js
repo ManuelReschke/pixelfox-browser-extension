@@ -7,6 +7,8 @@ const selectionButton = document.getElementById("selectionButton");
 const fileButton = document.getElementById("fileButton");
 const fileInput = document.getElementById("fileInput");
 const settingsButton = document.getElementById("settingsButton");
+const noticeSettingsButton = document.getElementById("noticeSettingsButton");
+const missingKeyNotice = document.getElementById("missingKeyNotice");
 const uploadStatus = document.getElementById("uploadStatus");
 const recentUploadsList = document.getElementById("recentUploadsList");
 const emptyRecentUploads = document.getElementById("emptyRecentUploads");
@@ -27,6 +29,7 @@ async function init() {
   fileButton.addEventListener("click", () => fileInput.click());
   fileInput.addEventListener("change", uploadSelectedFile);
   settingsButton.addEventListener("click", () => chrome.runtime.openOptionsPage());
+  noticeSettingsButton.addEventListener("click", () => chrome.runtime.openOptionsPage());
   recentUploadsList.addEventListener("click", copyRecentUpload);
   chrome.storage.onChanged.addListener((changes, areaName) => {
     if (areaName === "local" && changes.recentUploads) {
@@ -37,11 +40,14 @@ async function init() {
 
 function applySettingsState() {
   if (!settings.apiKey) {
+    missingKeyNotice.hidden = false;
     visibleAreaButton.disabled = true;
     selectionButton.disabled = true;
     fileButton.disabled = true;
     return;
   }
+
+  missingKeyNotice.hidden = true;
 }
 
 async function startScreenshot(mode) {
